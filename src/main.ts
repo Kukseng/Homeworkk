@@ -7,14 +7,13 @@ const themeManager = new ThemeManager();
 themeManager.init();
 
 // Initialize router
-const router = new Router();
-router.init();
+const router = new Router(); // Constructor calls initialize()
 
 // Handle navigation clicks
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
   const link = target.closest('[data-route]') as HTMLElement;
-  
+
   if (link) {
     e.preventDefault();
     const route = link.getAttribute('data-route');
